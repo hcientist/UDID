@@ -1,6 +1,9 @@
 <?php 
   $udid = $_GET["params"];
   $decoded = rawurldecode($udid);
+  $beginning = strpos($decoded, "UDID "); 
+  $ending = strpos($decoded, " ", $beginning); 
+  $udid_val =  substr($decoded, $beginning, $ending-$beginning);
   file_put_contents("udid-output.txt", $udid); 
 ?>
 
@@ -10,11 +13,9 @@
   </head>
   <body>
     <h1>iOS UDID</h1>
-    <div>
-      <?=$udid?>
-    </div>
+    <pre>
+      <?=$udid_val?>
+    </pre>
     <p>With many thanks to <a href="http://www.joshwright.com/tips/getting-an-iphone-udid-from-mobile-safari">Josh Wright</a>, <a href="http://stackoverflow.com/a/9426573/1449799">Daniel Brajkovic</a>, and <a href="http://stackoverflow.com/a/6442198/1449799">Kev Swindells(?)</a>. </p>
-    <?php echo $udid; ?>
-    <?php echo $decoded; ?>
   </body>
 </html>
