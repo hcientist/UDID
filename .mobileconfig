@@ -5,7 +5,7 @@
         <key>PayloadContent</key>
         <dict>
             <key>URL</key>
-            <string>http://people.cs.vt.edu/tgm/old/udid/udid.php</string>
+            <string>http://people.cs.vt.edu/tgm/old/UDID/udid.php</string>
             <key>DeviceAttributes</key>
             <array>
                 <string>UDID</string>
