@@ -1,9 +1,9 @@
 <?php 
   $udid = $_GET["params"];
   $decoded = rawurldecode($udid);
-  $beginning = strpos($decoded, "UDID "); 
-  $ending = strpos($decoded, " ", $beginning); 
-  $udid_val =  substr($decoded, $beginning, $ending-$beginning);
+  $matches = array();
+  preg_match('/>UDID<\/key>\s+<string>(.+)</', $decoded, $matches);
+  $udid_val = $matches[1];
   file_put_contents("udid-output.txt", $udid); 
 ?>
 
