@@ -4,7 +4,6 @@
   $matches = array();
   preg_match('/>UDID<\/key>\s+<string>(.+)</', $decoded, $matches);
   $udid_val = $matches[1];
-  file_put_contents("udid-output.txt", $udid); 
 ?>
 
 <html>
